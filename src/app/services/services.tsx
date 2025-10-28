@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform, useInView, AnimatePresence } from "framer-motion";
+import Link from 'next/link';
 import { useRef, useState, useEffect } from "react";
 
 type ServiceType = {
@@ -580,27 +581,20 @@ const Services = () => {
               Let&apos;s discuss your project and create a design that exceeds your expectations
             </motion.p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.button 
-                className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-orange-500 to-amber-500 text-white rounded-xl font-medium shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto"
-                whileHover={{ 
-                  scale: 1.05,
-                  background: "linear-gradient(45deg, #ea580c, #d97706)",
-                  transition: { duration: 0.3 }
-                }}
-                whileTap={{ scale: 0.95 }}
+              <Link
+                href="/contact"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-orange-500 to-amber-500 text-white rounded-xl font-medium shadow-lg hover:shadow-xl transition-all duration-300 w-full sm:w-auto inline-flex items-center justify-center"
+                aria-label="Get a Free Consultation"
               >
                 Get a Free Consultation
-              </motion.button>
-              <motion.button 
-                className="px-6 sm:px-8 py-3 sm:py-4 bg-transparent border-2 border-white text-white rounded-xl font-medium hover:bg-white hover:text-gray-900 transition-all duration-300 w-full sm:w-auto"
-                whileHover={{ 
-                  scale: 1.05,
-                  transition: { duration: 0.3 }
-                }}
-                whileTap={{ scale: 0.95 }}
+              </Link>
+              <Link
+                href="/portfolio"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-transparent border-2 border-white text-white rounded-xl font-medium hover:bg-white hover:text-gray-900 transition-all duration-300 w-full sm:w-auto inline-flex items-center justify-center"
+                aria-label="View our portfolio"
               >
                 View Our Portfolio
-              </motion.button>
+              </Link>
             </div>
           </AnimatedSection>
         </div>

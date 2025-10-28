@@ -92,8 +92,8 @@ export default function Contact() {
     { 
       icon: "📍", 
       title: "Location", 
-      content: "Bangalore , Karnataka, India",
-      link: "#"
+      content: "Bangalore, Karnataka, India",
+      link: "https://www.google.com/maps/search/?api=1&query=Bangalore+Karnataka+India"
     }
   ];
 
@@ -333,7 +333,8 @@ export default function Contact() {
                 <h3 className="text-2xl font-light mb-4">Need Immediate Assistance?</h3>
                 <p className="mb-6 text-gray-300">Call us directly for urgent inquiries or project consultations.</p>
                 <motion.a
-                  href="tel:+15551234567"
+                  href="tel:+918431866567"
+                  aria-label="Call +91 8431866567"
                   className="inline-flex items-center bg-orange-600 text-white px-6 py-3 rounded-lg font-medium"
                   whileHover={{ 
                     scale: 1.05,
@@ -361,16 +362,16 @@ export default function Contact() {
           </div>
           
           <div className="aspect-video bg-gradient-to-br from-gray-200 to-gray-300 rounded-2xl overflow-hidden shadow-xl relative">
-            {/* Map placeholder - in a real app, you would embed Google Maps or similar */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center">
-                <div className="text-6xl mb-4">🗺️</div>
-                <p className="text-gray-700 font-medium">Interactive Map View</p>
-                <p className="text-gray-600 mt-2">123 Design Street, Creative City</p>
-              </div>
-            </div>
-            
-            {/* Map controls */}
+            {/* Embedded Google Map for Bangalore, Karnataka */}
+            <iframe
+              title="Bright Edge Interiors - Bangalore"
+              src="https://www.google.com/maps?q=Bangalore+Karnataka+India&output=embed"
+              className="absolute inset-0 w-full h-full border-0"
+              allowFullScreen
+              loading="lazy"
+            />
+
+            {/* Map controls (kept as overlay) */}
             <div className="absolute top-4 right-4 bg-white rounded-lg shadow-md p-2 flex flex-col space-y-2">
               <button className="p-2 hover:bg-gray-100 rounded">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -387,7 +388,9 @@ export default function Contact() {
           
           <div className="mt-8 text-center">
             <motion.a
-              href="#"
+              href="https://www.google.com/maps/search/?api=1&query=Bangalore+Karnataka+India"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center text-orange-600 font-medium"
               whileHover={{ x: 5 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -401,38 +404,6 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-6 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-light mb-6">Ready to Transform Your Space?</h2>
-            <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-              Let&apos;s discuss your project and create a design that exceeds your expectations
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-orange-600 text-white rounded-lg font-medium"
-              >
-                Schedule a Consultation
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-medium"
-              >
-                View Our Portfolio
-              </motion.button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       <style jsx global>{`
         @keyframes blob {

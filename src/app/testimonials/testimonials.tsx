@@ -288,55 +288,7 @@ export default function Testimonials() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-6 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.h2 
-            className="text-3xl md:text-4xl font-light mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ delay: 0.2 }}
-          >
-            Ready to Create Your Success Story?
-          </motion.h2>
-          <motion.p 
-            className="text-xl text-gray-300 mb-10 font-light max-w-2xl mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ delay: 0.4 }}
-          >
-            Join our growing family of satisfied clients and let us transform your space into something extraordinary
-          </motion.p>
-          <motion.div 
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ delay: 0.6 }}
-          >
-            <motion.button
-              whileHover={{ 
-                scale: 1.05,
-                background: "linear-gradient(45deg, #ea580c, #d97706)"
-              }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-gradient-to-r from-orange-600 to-amber-600 text-white rounded-xl font-medium shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              Start Your Project
-            </motion.button>
-            <motion.button
-              whileHover={{ 
-                scale: 1.05,
-                backgroundColor: "white",
-                color: "#111827"
-              }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-xl font-medium hover:bg-white hover:text-gray-900 transition-all duration-300"
-            >
-              View Portfolio
-            </motion.button>
-          </motion.div>
-        </div>
-      </section>
+
     </div>
   );
 }

@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from 'next/link';
 
 // Define the ProjectType interface
 interface ProjectType {
@@ -377,17 +378,13 @@ const Portfolio = () => {
           >
             Let&apos;s collaborate to bring your vision to life
           </motion.p>
-          <motion.button 
-            className="px-8 py-4 bg-orange-600 text-white rounded-lg font-medium"
-            whileHover={{ 
-              scale: 1.05,
-              backgroundColor: "#ea580c",
-              transition: { duration: 0.3 }
-            }}
-            whileTap={{ scale: 0.95 }}
+          <Link
+            href="/contact"
+            className="px-8 py-4 bg-orange-600 text-white rounded-lg font-medium inline-flex items-center justify-center hover:shadow-lg transition-shadow duration-300"
+            aria-label="Start your project - contact us"
           >
             Start Your Project
-          </motion.button>
+          </Link>
         </div>
       </section>
 

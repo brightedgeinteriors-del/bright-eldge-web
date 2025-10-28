@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const PricingPage = () => {
   const [activeStage, setActiveStage] = useState<number | null>(null);
@@ -201,8 +202,8 @@ const PricingPage = () => {
         </ScrollReveal>
       </section>
 
-      {/* Payment Stages Section */}
-      <section className="py-32 px-8 bg-white">
+  {/* Payment Stages Section */}
+  <section id="payment-milestones" className="py-32 px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <ScrollReveal>
             <div className="text-center mb-20">
@@ -326,12 +327,18 @@ const PricingPage = () => {
               Let's discuss your project and how our transparent pricing approach can bring your vision to life
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="px-8 py-4 bg-gradient-to-r from-orange-600 to-amber-600 text-white rounded-lg font-medium hover:shadow-lg transition-shadow duration-300">
+              <Link
+                href="/contact"
+                className="px-8 py-4 bg-gradient-to-r from-orange-600 to-amber-600 text-white rounded-lg font-medium hover:shadow-lg transition-shadow duration-300 inline-flex items-center justify-center"
+              >
                 Schedule a Consultation
-              </button>
-              <button className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-medium hover:bg-white hover:text-gray-900 transition-colors duration-300">
-                Download Pricing Guide
-              </button>
+              </Link>
+              <Link
+                href="/pricing#payment-milestones"
+                className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-medium hover:bg-white hover:text-gray-900 transition-colors duration-300 inline-flex items-center justify-center"
+              >
+                See Our Pricing
+              </Link>
             </div>
           </ScrollReveal>
         </div>

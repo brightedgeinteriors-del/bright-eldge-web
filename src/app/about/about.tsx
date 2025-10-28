@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const AboutUs = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -441,12 +442,20 @@ const AboutUs = () => {
               We&apos;d love to hear about your project and explore how we can bring your vision to life
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="px-8 py-4 bg-gradient-to-r from-orange-600 to-amber-600 text-white rounded-lg font-medium hover:shadow-lg transition-shadow duration-300">
+              <Link
+                href="/contact"
+                className="px-8 py-4 bg-gradient-to-r from-orange-600 to-amber-600 text-white rounded-lg font-medium hover:shadow-lg transition-shadow duration-300 inline-flex items-center justify-center"
+                aria-label="Schedule a Consultation"
+              >
                 Schedule a Consultation
-              </button>
-              <button className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-medium hover:bg-white hover:text-gray-900 transition-colors duration-300">
+              </Link>
+              <Link
+                href="/portfolio"
+                className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg font-medium hover:bg-white hover:text-gray-900 transition-colors duration-300 inline-flex items-center justify-center"
+                aria-label="View Our Portfolio"
+              >
                 View Our Portfolio
-              </button>
+              </Link>
             </div>
           </ScrollReveal>
         </div>
