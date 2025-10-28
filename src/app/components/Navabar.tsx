@@ -37,7 +37,6 @@ const Navbar = () => {
     { name: 'Portfolio', href: '/portfolio', icon: 'image' },
     { name: 'Testimonials', href: '/testimonials', icon: 'chat' },
     { name: 'Pricing', href: '/pricing', icon: 'tag' },
-    { name: 'Contact Us', href: '/contact', icon: 'phone' },
   ];
 
   // Icon mapping
@@ -70,11 +69,6 @@ const Navbar = () => {
     tag: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
-      </svg>
-    ),
-    phone: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
       </svg>
     ),
   };
@@ -135,7 +129,7 @@ const Navbar = () => {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-6 lg:space-x-8">
-              {navLinks.slice(0, -1).map((link) => (
+              {navLinks.map((link) => (
                 <motion.div key={link.name} whileHover={{ scale: 1.05 }}>
                   <Link 
                     href={link.href}
@@ -152,7 +146,7 @@ const Navbar = () => {
               ))}
             </div>
 
-            {/* CTA Button */}
+            {/* CTA Button - Desktop */}
             <div className="hidden md:flex items-center">
               <motion.div 
                 whileHover={{ scale: 1.05 }}
@@ -226,12 +220,11 @@ const Navbar = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div 
-            className="md:hidden fixed top-0 left-0 right-0 bg-gradient-to-br from-orange-50 to-yellow-50 z-[70] overflow-y-auto"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            className="md:hidden fixed top-0 left-0 right-0 w-full h-auto bg-gradient-to-br from-orange-50 to-yellow-50 z-[70]"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            style={{ maxHeight: '100vh' }}
           >
             <div className="flex flex-col">
               {/* Mobile menu header */}
@@ -265,8 +258,8 @@ const Navbar = () => {
                 </motion.button>
               </div>
               
-              {/* Mobile menu links */}
-              <div className="py-6">
+              {/* Mobile menu links - Only menu items */}
+              <div className="py-4">
                 <div className="px-6">
                   <h3 className="text-orange-800 font-semibold text-sm uppercase tracking-wider mb-4">Navigation</h3>
                   <div className="space-y-2">
@@ -299,6 +292,23 @@ const Navbar = () => {
                     ))}
                   </div>
                 </div>
+              </div>
+              
+              {/* Mobile CTA Button - Same as desktop */}
+              <div className="p-6 border-t border-orange-100 bg-white">
+                <motion.div 
+                  whileHover={{ scale: 1.02 }} 
+                  whileTap={{ scale: 0.98 }}
+                  className="block"
+                >
+                  <Link 
+                    href="/contact"
+                    className="bg-gradient-to-r from-yellow-300 to-orange-500 text-white px-6 py-3 rounded-full font-medium text-center block w-full hover:shadow-lg transition-all duration-300"
+                    onClick={toggleMobileMenu}
+                  >
+                    Contact Us
+                  </Link>
+                </motion.div>
               </div>
             </div>
           </motion.div>
